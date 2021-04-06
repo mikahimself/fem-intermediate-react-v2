@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "eslint:recommended",
+        //"plugin:import/errors",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier" // prettier/react has been imported into prettier in eslint-config-prettier
+    ],
+    "parser": "@babel/eslint-parser",
+    "plugins": ["react", "react-hooks", "jsx-a11y", "@babel"],
+    // "plugins": ["react", "import", "jsx-a11y"]
+    "rules": {
+        "react/prop-types": 0, // Turn off checks for prop types
+        "no-console": 1, // Give warnings instead of errors about console.log
+        "react-hooks/rules-of-hooks": 2, // Give an error if hooks are created inside if statements
+        "react-hooks/exhaustive-deps": 1, // Check effect dependencies
+        "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error"
+        // See: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md 
+        // and: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version" : "detect" // Look into package.json to determine React version
+        }
+    }
+}
